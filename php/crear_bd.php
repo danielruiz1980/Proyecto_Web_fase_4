@@ -7,8 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link href = "css/bootstrap.min.css" rel = "stylesheet">
+    <link rel="icon" href="img/solologo.jpg" type="image/x-icon" />
 </head>
 <body>
+  
+</body>
 
     <?php
     $servername = "localhost";
@@ -29,30 +32,25 @@
 
         ?>
         
-        <!-- The Modal -->
-        
-            <div class="modal-dialog">
-            <div class="modal-content">
-            
-                <!-- Modal Header -->
-                <div class="modal-header">
-                <h4 class="modal-title">Excelente</h4>
-                <button class="close" onclick="location.href='../index.html'">&times;</button>
+
+
+            <!-- Modal -->
+          <div class="container">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Excelente!</h5>
+                    <button type="button" class="btn-close" aria-label="Close" onclick="location.href='../index.html'"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>La base de datos se ha creado satisfactoriamente</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="location.href='../index.html'">Cerrar</button>
+                  </div>
                 </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Base de datos creada satisfactoriamente.
-                </div>
-                
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                <button class="btn btn-danger" onclick="location.href='../index.html'">Cerrar</button>
-                </div>
-                
             </div>
-            </div>
-        
+          </div>
         
         
         <?php
@@ -65,39 +63,36 @@
         
         <!-- The Modal -->
         
-            <div class="modal-dialog">
-            <div class="modal-content">
-            
-                <!-- Modal Header -->
-                <div class="modal-header">
-                <h4 class="modal-title">Error</h4>
-                <button class="close" onclick="location.href='../index.html'">&times;</button>
+          <div class="container">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Ups, ocurrió un error!</h5>
+                    <button type="button" class="btn-close" onclick="location.href='../index.html'" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>La base de datos ya está creada</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="location.href='../index.html'">Cerrar</button>
+                  </div>
                 </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Se pordució un error al crear la base de datos.
-                </div>
-                
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                <button class="btn btn-danger" onclick="location.href='../index.html'">Cerrar</button>
-                </div>
-                
-            </div>
-            </div>
+              </div>
+              
+          
         
         
         
         <?php
 
-            echo "Error al crear la base de datos " . "<br>". mysqli_error($conn);
+            echo "". mysqli_error($conn);
         
         }
         
         mysqli_close($conn);
         ?>
-    
+        </div> 
+
     <script>
       (function(){
         'use strict'
@@ -119,9 +114,8 @@
       })()
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script src = "js/bootstrap.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.slim.js" integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc=" crossorigin="anonymous"></script>      
 
-  </body>
+
   </html>
