@@ -89,101 +89,30 @@
 
     </header>
     <main>
-      <p class="text-center fs-2">Formulario para actualizar un producto</p>
-      
 
-        <div class="container mt-3">
+      <div class="container mt-5">
+        <h2 class="text-center fs-2">Actualizar un producto</h2>
+        
+        <form action="php/actualizar.php" method="POST" class="row g-3 justify-content-center was-validated">
+          <div class="col-12 position-relative">
+            <div class="form-group">
+              <label for="val_cod" class="form-label">Ingrese el código del producto</label>
+              <input type="number" class="form-control" maxlength="5" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="" id="val_cod" name="val_cod" required>
+              <div class="valid-feedback">
+                Completado
+              </div>
+              <div class="invalid-feedback">
+                Campo por completar
+              </div>
+            </div>
+          </div>
           
-          <form class="row g-3 justify-content-center needs-validation" novalidate>
-            <div class="col-12 position-relative">
-              <label for="val_cod" class="form-label">Escriba el código del producto</label>
-              <input type="text" class="form-control" placeholder="Recuerde usar el numero 770 al inicio del código(IAC COL)" id="val_cod" required>
-              <div class="valid-tooltip">
-                Codigo verificado
-              </div>
-            </div>
-            <div class="col-12 position-relative">
-              <label for="val_marca" class="form-label">Actualice la marca del producto</label>
-              <input type="text" class="form-control" id="val_marca" required>
-              <div class="valid-tooltip">
-                Has actualizado esta marca
-              </div>
-            </div>
-            <div class="col-6 position-relative">
-              <label for="val_precio" class="form-label">Escriba un nuevo precio para el producto</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="act_precio_Prepend">$</span>
-                <input type="number" class="form-control" id="val_precio" aria-describedby="act_precio_Prepend" required>
-                <div class="invalid-tooltip">
-                  Actualice el precio del producto.
-                </div>
-              </div>
-            </div>
-            <div class="col-6 position-relative">
-              <label for="uni_pro" class="form-label">Unidades de producto</label>
-              <select class="form-select" id="uni_pro" required>
-                <option selected disabled value="">Cantidad...</option>
-                <option value="1">1</option>
-                <option value="1">2</option>
-                <option value="1">3</option>
-                <option value="1">4</option>
-                <option value="1">5</option>
-                <option value="1">6</option>
-                <option value="1">7</option>
-                <option value="1">8</option>
-                <option value="1">9</option>
-                <option value="1">10</option>
-                <option value="1">11</option>
-                <option value="1">12</option>
-                <option value="1">13</option>
-                <option value="1">14</option>
-                <option value="1">15</option>
-                <option value="1">16</option>
-                <option value="1">17</option>
-                <option value="1">18</option>
-                <option value="1">19</option>
-                <option value="1">20</option>
-                <option value="1">21</option>
-                <option value="1">22</option>
-                <option value="1">23</option>
-                <option value="1">24</option>
-                <option value="1">25</option>
-                <option value="1">26</option>
-                <option value="1">27</option>
-                <option value="1">28</option>
-                <option value="1">29</option>
-                <option value="1">30</option>
-                <option value="1">31</option>
-                <option value="1">32</option>
-                <option value="1">33</option>
-                <option value="1">34</option>
-                <option value="1">35</option>
-                <option value="1">36</option>
-                <option value="1">37</option>
-                <option value="1">38</option>
-                <option value="1">39</option>
-                <option value="1">40</option>
-                <option value="1">41</option>
-                <option value="1">42</option>
-                <option value="1">43</option>
-                <option value="1">44</option>
-                <option value="1">45</option>
-                <option value="1">46</option>
-                <option value="1">47</option>
-                <option value="1">48</option>
-                <option value="1">49</option>
-                <option value="1">50</option>
+          <div class="col-3 pb-4">
+            <button class="btn btn-outline-primary" type="submit">Consultar producto</button>
+          </div>
 
-              </select>
-              <div class="invalid-tooltip">
-                Seleccione un valor.
-              </div>
-            </div>
-            <div class="col-4 pb-4">
-              <button class="btn btn-outline-primary" id="mod_pro" type="submit">Modificar producto</button>
-            </div>
-          </form>
-        </div>
+        </form>
+      </div>
     </main>
 
 

@@ -9,102 +9,94 @@
     <link href = "css/bootstrap.min.css" rel = "stylesheet">
     <link rel="icon" href="img/solologo.jpg" type="image/x-icon" />
 </head>
-  <body>
+<body>
 
-  <?php
+ <?php
 
-  require('config.php');
+require('config.php');
 
-  $i = $_POST['id'];
-  $v = $_POST['val_cod'];
-  $m = $_POST['val_marca'];
-  $p = $_POST['val_precio'];
-  $u = $_POST['uni_pro'];
+$v = $_POST['val_cod'];
 
 
-  $sql = "UPDATE Productos SET val_cod='$v', val_marca='$m', val_precio='$p', uni_pro='$u'  WHERE id='$i'";
+$sql = "SELECT * FROM productos WHERE val_cod=$v";
+$result = mysqli_query($conn, $sql);
 
-  if (mysqli_query($conn, $sql)) {
+if (mysqli_num_rows($result) > 0) {
+    // output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
 
-
-  ?>
-
-  <!-- The Modal -->
-    
-      <div class="modal-dialog">
-        <div class="modal-content">
-        
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Excelente</h4>
-            <button class="close" onclick="location.href='../index.html'">&times;</button>
-          </div>
-          
-          <!-- Modal body -->
-          <div class="modal-body">
-            
-      <?php
-          echo "Información actualizada satisfactoriamente " . "<br>";
       ?>
 
-
-          </div>
-          
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button class="btn btn-danger" onclick="location.href='../index.html'">Cerrar</button>
-          </div>
-          
-        </div>
-      </div>
-
-
-
-  <?php
-
-
-  } else {
-
-
-  ?>
-
-  <!-- The Modal -->
-    
-      <div class="modal-dialog">
-        <div class="modal-content">
-        
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Error</h4>
-            <button class="close" onclick="location.href='../index.html'">&times;</button>
-          </div>
-          
-          <!-- Modal body -->
-          <div class="modal-body">
-            
-      <?php
-          echo "Error actualizando la información " . "<br>". mysqli_error($conn);
-      ?>
-
-
-          </div>
-          
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button class="btn btn-danger" onclick="location.href='../index.html'">Cerrar</button>
-          </div>
-          
-        </div>
-      </div>
-
-
+<div class="container">
+  <h2>Actualización de producto</h2>
+  <form action="actualizar2.php" method="POST">
+    <div class="form-group">
+      <label>Código del producto:</label>
+      <input type="text" class="form-control" value=" <?php echo $row['val_cod'] ?> " id="val_cod" maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="código de producto" name="val_cod" readonly>
+    </div>
+    <div class="form-group">
+      <label>Nombre del producto:</label>
+      <input type="text" class="form-control" value=" <?php echo $row['val_nom'] ?> " id="val_nom" maxlength="100" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Actualice el nombre del producto" name="val_nom" required>
+    </div>
+    <div class="form-group">
+      <label>Marca del producto:</label>
+      <input type="text" class="form-control" value=" <?php echo $row['val_marca'] ?> " id="val_marca" maxlength="150" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Actualice la marca del producto" name="val_marca" required>
+    </div>
+    <div class="form-group">
+      <label>Precio del producto:</label>
+      <input type="text" class="form-control" value=" <?php echo $row['val_precio'] ?> " id="val_precio" maxlength="20" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Actualice el proecio del producto" name="val_precio" required>
+    </div>
+    <div class="form-group">
+      <label>Unidades de producto:</label>
+      <input type="text" class="form-control" value=" <?php echo $row['uni_pro'] ?> " id="uni_pro" maxlength="5" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="Actualice las unidades del producto" name="uni_pro" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+  </form>
+</div>
 
   <?php
 
-  }
+    }
 
-  mysqli_close($conn);
-  ?> 
+
+} else {
+
+
+
+?>
+
+<!-- The Modal -->
+  
+    <div class="container">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Ups, ocurrió un error!</h5>
+                <button type="button" class="btn-close" onclick="location.href='../actualizar.html'" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+              <p>Este producto no se encuentra en el inventario</p>
+              <?php
+              echo "" . "<br>" . mysqli_error($conn);
+              ?> 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" onclick="location.href='../actualizar.html'" data-bs-dismiss="modal">Cerrar</button>
+              <button type = "button" class="btn btn-secondary" onclick="location.href='../index.html'">Volver al menú principal</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+ <?php
+
+
+}
+
+mysqli_close($conn);
+?> 
   <script>
       (function(){
         'use strict'

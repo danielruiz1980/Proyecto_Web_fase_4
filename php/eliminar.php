@@ -45,7 +45,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Excelente</h5>
-                <button type="button" class="btn-close" onclick="location.href='../insertar.html'" aria-label="Close">&times;</button>
+                <button type="button" class="btn-close" onclick="location.href='../eliminar.html'" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
               <p>Se eliminó el siguiente producto satisfactoriamente:</p>
@@ -59,7 +59,7 @@
               ?>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-danger" onclick="location.href='../ingresar.html'" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-danger" onclick="location.href='../eliminar.html'" data-bs-dismiss="modal">Cerrar</button>
               <button type = "button" class="btn btn-secondary" onclick="location.href='../index.html'">Volver al menú principal</button>
             </div>
           </div>

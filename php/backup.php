@@ -40,33 +40,25 @@ case 0:
 
 <!-- The Modal -->
   
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Excelente</h4>
-          <button class="close" onclick="location.href='../index.html'">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          
-    <?php
-        echo 'La base de datos <b>' .$dbname .'</b> se ha almacenado correctamente en la siguiente ruta '.getcwd().'/' .$backup_file .'</b>';
-    ?>
-
-
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button class="btn btn-danger" onclick="location.href='../index.html'">Cerrar</button>
-        </div>
-        
-      </div>
-    </div>
-
+<div class="container">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Excelente!</h5>
+                    <button type="button" class="btn-close" onclick="location.href='../index.html'" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <?php
+                      echo 'La base de datos <b>' .$dbname .'</b> se ha almacenado correctamente en la siguiente ruta '.getcwd().'/' .$backup_file .'</b>';
+                     ?>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="location.href='../index.html'">Cerrar</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+    
 
 
  <?php
@@ -79,32 +71,25 @@ case 1:
 
 <!-- The Modal -->
   
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Error</h4>
-          <button class="close" onclick="location.href='../index.html'">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          
-    <?php
-        echo 'Se ha producido un error al exportar <b>' .$dbname .'</b> a '.getcwd().'/ verifique la siguiente ruta: ' .$backup_file .'</b>';
-    ?>
-
-
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button class="btn btn-danger" onclick="location.href='../index.html'">Cerrar</button>
-        </div>
-        
-      </div>
-    </div>
+          <div class="container">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Ups, ocurrió un error!</h5>
+                    <button type="button" class="btn-close" onclick="location.href='../index.html'" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    
+                    <?php
+                     echo 'Se ha producido un error al exportar <b>' .$dbname .'</b> a '.getcwd().'/ verifique la siguiente ruta: ' .$backup_file .'</b>';
+                    ?>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="location.href='../index.html'">Cerrar</button>
+                  </div>
+                </div>
+            </div>
+          </div>
 
 
 
@@ -119,33 +104,26 @@ case 2:
 
 <!-- The Modal -->
   
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Error</h4>
-          <button class="close" onclick="location.href='../index.html'">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          
-    <?php
-        echo 'Se ha producido un error de exportación, compruebe la siguiente información: <br/><br/><table><tr><td>Nombre de la base de datos:</td><td><b>' .$dbname .'</b></td></tr><tr><td>Nombre de usuario MySQL:</td><td><b>' .$username .'</b></td></tr><tr><td>Contraseña MySQL:</td><td><b> '.$password.' </b></td></tr><tr><td>Nombre de host MySQL:</td><td><b>' .$servername .'</b></td></tr></table>';
-    ?>
-
-
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button class="btn btn-danger" onclick="location.href='../index.html'">Cerrar</button>
-        </div>
-        
-      </div>
-    </div>
-
+          <div class="container">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Ups, ocurrió un error!</h5>
+                    <button type="button" class="btn-close" onclick="location.href='../index.html'" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    
+                  <?php
+                    echo 'Se ha producido un error de exportación, compruebe la siguiente información: <br/><br/><table><tr><td>Nombre de la base de datos:</td><td><b>' .$dbname .'</b></td></tr><tr><td>Nombre de usuario MySQL:</td><td><b>' .$username .'</b></td></tr><tr><td>Contraseña MySQL:</td><td><b> '.$password.' </b></td></tr><tr><td>Nombre de host MySQL:</td><td><b>' .$servername .'</b></td></tr></table>';
+                  ?>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="location.href='../index.html'">Cerrar</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+    
 
 
  <?php

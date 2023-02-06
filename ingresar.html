@@ -90,16 +90,16 @@
 
     </header>
     <main>
-      <p class="text-center fs-2">Formulario para ingresar un producto</p>
+      
         <div class="container mt-3">
-          
-          <form action="php/insertar.php" method="post" class="row g-3 justify-content-center needs-validation" novalidate>
+          <h2 class="text-center fs-2">Formulario para ingresar un producto</h2>
+          <form action="php/insertar.php" method="post" class="row g-3 justify-content-center was-validated" >
             <div class="col-12 position-relative">
               <div class="form-group">
                 <label for="val_cod" class="form-label">Código del producto</label>
                 <input type="number" maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" placeholder="Escriba cuatro números para el código del producto" id="val_cod" name="val_cod" required>
-                <div class="valid-tooltip">
-                  Este es tu código asignado
+                <div class="valid-feedback">
+                  Este es tu código asignado para el producto
                 </div>
               </div>
             </div>
@@ -107,19 +107,22 @@
               <div class="form-group">
                 <label for="val_nom" class="form-label">Nombre del producto</label>
                 <input type="text" maxlength="100" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" placeholder="Escriba el nombre del producto" id="val_nom" name="val_nom" required>
-                <div class = "invalid-tooltip">
+                <div class = "invalid-feedback">
                   Ingrese el nombre del producto
+                </div>
+                <div class="valid-feedback">
+                  Registro de nombre de producto completo!
                 </div>
               </div>
             </div>
             <div class="col-12 position-relative">
               <div class="form-group">
                 <label for="val_marca" class="form-label">Marca del producto</label>
-                <input type="text" class="form-control" id="val_marca" name="val_marca" required>
-                <div class="valid-tooltip">
-                  Registro de marca completo!
+                <input type="text" maxlength="150" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" id="val_marca" name="val_marca" required>
+                <div class="valid-feedback">
+                  Registro de marca de producto completo!
                 </div>
-                <div class = "invalid-tooltip">
+                <div class = "invalid-feedback">
                   Ingrese la marca del producto
                 </div>
               </div>
@@ -130,11 +133,11 @@
                 <div class="input-group has-validation">
                   <span class="input-group-text" id="val_precio_Prepend">$</span>
                   <input type="number" maxlength="20" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" id="val_precio" name="val_precio" aria-describedby="val_precio_Prepend" required>
-                  <div class="valid-tooltip">
-                    Registro de precio completado!
+                  <div class="valid-feedback">
+                    Registro de precio de producto completo!
                   </div>
-                  <div class="invalid-tooltip">
-                    Ingrese un precio para el producto producto.
+                  <div class="invalid-feedback">
+                    Ingrese un precio para el producto.
                   </div>
                 </div>
               </div>
@@ -143,12 +146,15 @@
               <div class="form-group">
                 <label for="uni_pro" class="form-label">Unidades de producto</label>
                 <input type ="number" maxlength="5" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" id = "uni_pro" name = "uni_pro" required>
-                <div class="invalid-tooltip">
-                  Seleccione un valor.
+                <div class="invalid-feedback">
+                  Ingrese un valor.
+                </div>
+                <div class="valid-feedback">
+                  Registro de unidades de producto completado!
                 </div>
               </div>
             </div>
-            <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="d-grid gap-2 col-6  mb-5">
               <button type="submit" class="btn btn-primary">
               <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                 Registrar producto
@@ -172,7 +178,7 @@
 
       
 
-    <footer class="bg-dark text-center text-white fixed-bottom">
+    <footer class="bg-dark text-center text-white">
       <!-- Grid container -->
       <div class="container">
         <!-- Section: Social media -->

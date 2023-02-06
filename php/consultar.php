@@ -39,7 +39,7 @@
                     echo" código de producto ".$row["val_cod"]
                   ?>
                   :</h5>
-                    <button type="button" class="btn-close" onclick="location.href='../insertar.html'" aria-label="Close">&times;</button>
+                    <button type="button" class="btn-close" onclick="location.href='../consultar.html'" aria-label="Close">&times;</button>
                 </div>
                 <div class="modal-body">
                   <?php
@@ -84,10 +84,10 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Ups, ocurrió un error!</h5>
-                <button type="button" class="btn-close" onclick="location.href='../eliminar.html'" aria-label="Close">&times;</button>
+                <button type="button" class="btn-close" onclick="location.href='../consultar.html'" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
-              <p>Este producto no se encuentra en el inventarió</p>
+              <p>Este producto no se encuentra en el inventario</p>
               <?php
               echo "" . "<br>" . mysqli_error($conn);
               ?> 

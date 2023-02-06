@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Creación de tabla!</title>
+    <title>Agregar producto!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <link href = "css/bootstrap.min.css" rel = "stylesheet">
@@ -35,7 +35,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Excelente!</h5>
-                <button type="button" class="btn-close" onclick="location.href='../insertar.html'" aria-label="Close">&times;</button>
+                <button type="button" class="btn-close" onclick="location.href='../ingresar.html'" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
               <p>Datos del producto registrados exitosamente.</p>
@@ -63,7 +63,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">Ups, ocurrió un error!</h5>
-                <button type="button" class="btn-close" onclick="location.href='../insertar.html'" aria-label="Close">&times;</button>
+                <button type="button" class="btn-close" onclick="location.href='../ingresar.html'" aria-label="Close">&times;</button>
             </div>
             <div class="modal-body">
               <p>Se ha producido un error al ingresar el producto o ya existe con el código de producto ingresado</p>
